@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Map Showing Bike Thefts in Philadelphia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css"/>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript'
+            src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+    <script type='text/javascript' src='data.js'></script>
+
+</head>
+
+<body>
+<h1>Interactive Map showing the bike thefts in Philadelphia</h1>
+
+<div id="map" style="width: 800px; height: 500px; border: 1px solid #AAA;"></div>
+
+<script type="text/javascript">
+
+		var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		});
+		
+		var map = L.map('map').setView([39.95,-75.16],19).addLayer(tiles);;
+
+		var markers = L.markerClusterGroup();
+		var Layer = L.geoJson(data, {
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup(feature.properties.STOLEN_VAL);
+			}
+		});
+		markers.addLayer(Layer);
+		map.addLayer(markers);
+		<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome to the Map Showing Bike Thefts in Philadelphia</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+
+    <link rel="stylesheet" type="text/css" href="http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.css"/>
+    <link rel="stylesheet" type="text/css"
+          href="http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/MarkerCluster.Default.css"/>
+
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='http://cdn.leafletjs.com/leaflet/v0.7.7/leaflet.js'></script>
+    <script type='text/javascript'
+            src='http://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/0.4.0/leaflet.markercluster.js'></script>
+    <script type='text/javascript' src='data.js'></script>
+
+</head>
+
+<body>
+<h1>Interactive Map showing the bike thefts in Philadelphia</h1>
+
+<div id="map" style="width: 800px; height: 500px; border: 1px solid #AAA;"></div>
+<script type="text/javascript">
+
+		var tiles = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+			maxZoom: 18,
+			attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+		});
+		var map = L.map('map').setView([39.95,-75.16],19).addLayer(tiles);;
+
+		var markers = L.markerClusterGroup();
+		var geoJsonLayer = L.geoJson(data, {
+			onEachFeature: function (feature, layer) {
+				layer.bindPopup(feature.properties.STOLEN_VAL);
+			}
+		});
+		markers.addLayer(geoJsonLayer);
+		map.addLayer(markers);
+		map.fitBounds(markers.getBounds());
+
+</script>
+</body>
+</html>
+
+  
+</script>
+</body>
+</html>
+
+  
